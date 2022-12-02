@@ -12,6 +12,8 @@ KetaiBluetooth bt;
 // Diverse globale variabler
 String data_in = "";
 String toPrint = "gg";
+int menu_btnw = 250;
+int menu_btnh = 150;
 
 // Setup køres engang på start af app
 void setup() {
@@ -28,6 +30,8 @@ void setup() {
 // Draw looper konstant hoved del for kode
 
 void draw() {
+  rectMode(CENTER);
+  rect(width/2, height/2, menu_btnw, menu_btnh);
   text(toPrint, width/2, height/2);
   
 }
