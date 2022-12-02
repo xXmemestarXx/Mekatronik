@@ -28,23 +28,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/on"
-            tools:ignore="TextContrastCheck"
-            android:onClick="onClick"/>
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/btnOff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/off"
-            tools:ignore="TextContrastCheck"
-            android:onClick="onClick"/>
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/btnList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/devices"
-            android:onClick="onClick"/>
+            android:text="@string/devices" />
     </LinearLayout>
 
 </FrameLayout>
