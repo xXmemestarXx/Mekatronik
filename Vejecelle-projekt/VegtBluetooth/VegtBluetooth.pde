@@ -18,7 +18,7 @@ void setup() {
   orientation(PORTRAIT);
   background(0);
   stroke(255);
-  textSize(25);
+  textSize(100);
   textAlign(CENTER);
   bt.getPairedDeviceNames();
   bt.connectToDeviceByName("HC-05");
@@ -29,6 +29,7 @@ void setup() {
 
 void draw() {
   text(toPrint, width/2, height/2);
+  background(0);
   
 }
 
