@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Vejecelle-projekt</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button">Button</string>
+    <string name="notifikationer">notifikationer</string>
+    <string name="maaling">Maaling</string>
+    <string name="hjem">Hjem</string>
+    <string name="notifikationer_frag">Notifikationer</string>
+    <string name="maaling_frag">Maaling</string>
+    <string name="hjem_frag">Hjem</string>
+    <string name="devices">Devices</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+</resources>
