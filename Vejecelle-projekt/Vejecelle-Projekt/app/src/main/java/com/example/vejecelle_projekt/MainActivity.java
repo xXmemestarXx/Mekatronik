@@ -6,9 +6,14 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -26,22 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         //Bluetooth del
         BluetoothManager bluetoothManager = getSystemService(BluetoothManager.class);
-        BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
-        if (bluetoothAdapter == null) {
-            //Tjek om der ikke er Bluetooth
+        BluetoothAdapter btAdapter = bluetoothManager.getAdapter();
+
+
+        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH) != true) {
+            Toast.makeText(this, "Du har ikke Bluetooth MAKKER!", Toast.LENGTH_SHORT).show();
         }
         if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.BLUETOOTH,
-                Manifest.permission.BLUETOOTH_ADVERTISE,
-                Manifest.permission.BLUETOOTH_SCAN,
-                Manifest.permission.BLUETOOTH_CONNECT) ==
+                Manifest.permission.BLUETOOTH_ADMIN) ==
                 PackageManager.PERMISSION_GRANTED) {
-            // You can use the API that requires the permission.
-        } else {
-            // You can directly ask for the permission.
-            // The registered ActivityResultCallback gets the result of this request.
-            requestPermissionLauncher.launch(
-                    Manifest.permission.BLUETOOTH);
+            BluetoothDevice hc05 = btAdapter.getRemoteDevice("98:D3:C1:FD:DF:9B");
+            System.out.println(hc05.getName());
         }
 
 
